@@ -92,11 +92,11 @@ generate: controller-gen
 
 # Build the docker image
 docker-build: test
-	podman build -t ${IMG} .
+	docker build -t ${IMG} .
 
 # Push the docker image
 docker-push:
-	podman push ${IMG}
+	docker push ${IMG}
 
 # Download controller-gen locally if necessary
 CONTROLLER_GEN = $(shell pwd)/bin/controller-gen
